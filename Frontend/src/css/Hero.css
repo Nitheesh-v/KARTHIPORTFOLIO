@@ -1,0 +1,43 @@
+/* Hero Section Styles & Spotlight Effect */
+.dark-mode .header {
+  background-color: #141414 !important;
+}
+
+.dark-mode .header .overlay {
+  background: radial-gradient(
+    circle at 50% 45%,
+    rgba(43, 238, 52, 0.04) 0%,
+    rgba(20, 20, 20, 0.5) 40%,
+    rgba(20, 20, 20, 0.88) 75%,
+    #141414 100%
+  ) !important;
+}
+
+.dark-mode .header-title .up,
+.dark-mode .header-title .up::before,
+.dark-mode .header-title .up::after {
+  color: #2BEE34 !important;
+}
+
+.dark-mode .header-title .down {
+  color: #F5F5F5 !important;
+}
+
+.dark-mode .name-focus {
+  color: #F5F5F5 !important;
+  text-shadow: none !important;
+  font-weight: 700 !important;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.dark-mode .header .header-subtitle,
+.dark-mode .header .header-content .header-subtitle,
+.dark-mode .header-subtitle {
+  color: #F5F5F5 !important;
+  opacity: 1 !important;
+}
+
+
+
+

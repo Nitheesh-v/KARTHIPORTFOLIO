@@ -1,0 +1,76 @@
+/* Contact Section Styles */
+.contact-item {
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.contact-item:hover {
+  background-color: rgba(105, 90, 166, 0.05);
+  transform: translateX(5px);
+}
+
+.contact-item:hover .contact-icon {
+  background-color: #695aa6 !important;
+  color: #fff !important;
+  transform: scale(1.1);
+}
+
+.contact-item:hover a {
+  color: #695aa6 !important;
+}
+
+.contact-icon {
+  transition: all 0.3s ease;
+}
+
+/* Dark Mode Overrides */
+.dark-mode #contact h5,
+.dark-mode .contact-item h6 {
+  color: #f5f5f5 !important;
+}
+
+.dark-mode .form-control {
+  background-color: #1c1c1c !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: #f5f5f5 !important;
+}
+
+.dark-mode .form-control::placeholder {
+  color: #808080 !important;
+}
+
+.dark-mode .form-control:focus {
+  background-color: #1c1c1c !important;
+  border-color: #2BEE34 !important;
+  color: #f5f5f5 !important;
+  box-shadow: 0 0 0 0.2rem rgba(43, 238, 52, 0.18) !important;
+}
+
+.dark-mode .contact-icon {
+  background-color: rgba(43, 238, 52, 0.1) !important;
+  color: #2BEE34 !important;
+}
+
+.dark-mode .contact-item a {
+  color: #a0a0a0 !important;
+}
+
+.dark-mode .contact-item:hover {
+  background-color: rgba(43, 238, 52, 0.06) !important;
+}
+
+.dark-mode .contact-item:hover a {
+  color: #2BEE34 !important;
+}
+
+.dark-mode .contact-item:hover .contact-icon {
+  background-color: #2BEE34 !important;
+  color: #141414 !important;
+}
+
+.dark-mode .alert-success {
+  background-color: rgba(43, 238, 52, 0.12) !important;
+  border-color: rgba(43, 238, 52, 0.3) !important;
+  color: #2BEE34 !important;
+}
+

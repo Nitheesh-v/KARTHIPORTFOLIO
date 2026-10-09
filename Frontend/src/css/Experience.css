@@ -1,0 +1,47 @@
+/* Experience Section Styles */
+.experience-card {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  margin-bottom: 30px;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  border-color: #695aa6;
+  box-shadow: 0 10px 25px rgba(105, 90, 166, 0.12) !important;
+}
+
+/* Dark Mode Overrides */
+.dark-mode .blog-card {
+  background-color: #1e1e1e !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: #f5f5f5 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
+}
+
+.dark-mode .blog-card-title {
+  color: #f5f5f5 !important;
+}
+
+.dark-mode .blog-card-caption a {
+  color: #a0a0a0 !important;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .blog-card-caption a i {
+  color: #2BEE34 !important;
+}
+
+.dark-mode .blog-card-caption a:hover {
+  color: #2BEE34 !important;
+}
+
+.dark-mode .blog-card li,
+.dark-mode .experience-card li {
+  color: #a0a0a0 !important;
+}
+
+.dark-mode .experience-card:hover {
+  border-color: rgba(43, 238, 52, 0.45) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(43, 238, 52, 0.12) !important;
+}
+

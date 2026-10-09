@@ -1,0 +1,67 @@
+/* Global Styles & Transitions */
+body {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Global Dark Mode Styles */
+.dark-mode {
+  background-color: #141414 !important;
+  color: #f5f5f5 !important;
+}
+
+.dark-mode .section {
+  background-color: #141414 !important;
+}
+
+.dark-mode .section-title {
+  color: #f5f5f5 !important;
+}
+
+.dark-mode .section-subtitle {
+  color: #2BEE34 !important;
+}
+
+.dark-mode .text-primary {
+  color: #2BEE34 !important;
+}
+
+.dark-mode .text-muted,
+.dark-mode p {
+  color: #a0a0a0 !important;
+}
+
+/* Dark Mode Primary Button */
+.dark-mode .btn-primary {
+  background-color: #2BEE34 !important;
+  border-color: #2BEE34 !important;
+  color: #141414 !important;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.dark-mode .btn-primary:hover,
+.dark-mode .btn-primary:focus {
+  background-color: #25d42e !important;
+  border-color: #25d42e !important;
+  color: #141414 !important;
+  box-shadow: 0 4px 15px rgba(43, 238, 52, 0.35) !important;
+}
+
+/* Dark Mode Outline Primary Button */
+.dark-mode .btn-outline-primary {
+  border-color: #2BEE34 !important;
+  color: #2BEE34 !important;
+  background-color: transparent !important;
+  transition: all 0.3s ease;
+}
+
+.dark-mode .btn-outline-primary:hover,
+.dark-mode .btn-outline-primary:focus {
+  background-color: #2BEE34 !important;
+  border-color: #2BEE34 !important;
+  color: #141414 !important;
+  box-shadow: 0 4px 15px rgba(43, 238, 52, 0.3) !important;
+}
+

@@ -1,0 +1,25 @@
+/* About Section Styles */
+.about-me-box {
+  border-radius: 0px !important;
+}
+
+/* Dark Mode Overrides */
+.dark-mode .about-me-box {
+  background-color: #1e1e1e !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+.dark-mode .about-me-box .title {
+  color: #f5f5f5 !important;
+}
+
+.dark-mode .about-me-box .social-links .link {
+  color: #a0a0a0 !important;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .about-me-box .social-links .link:hover {
+  color: #2BEE34 !important;
+}
+

@@ -1,0 +1,23 @@
+/* Footer Section Styles */
+.dark-mode .footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.dark-mode .footer p,
+.dark-mode .footer a {
+  color: #a0a0a0 !important;
+}
+
+.dark-mode .footer a:hover {
+  color: #2BEE34 !important;
+}
+
+.dark-mode .footer .social-links .link {
+  color: #a0a0a0 !important;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .footer .social-links .link:hover {
+  color: #2BEE34 !important;
+}
+

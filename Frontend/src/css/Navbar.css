@@ -1,0 +1,287 @@
+/* Navbar Styles & Dark Mode Overrides */
+.dark-mode .custom-navbar {
+  background-color: transparent !important;
+  border-bottom: 1px solid transparent !important;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode .custom-navbar.affix {
+  background-color: rgba(20, 20, 20, 0.95) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(10px);
+}
+
+.dark-mode .custom-navbar .logo,
+.dark-mode .custom-navbar .link {
+  color: #f5f5f5 !important;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .custom-navbar .link:hover,
+.dark-mode .custom-navbar .link.active,
+.dark-mode .custom-navbar .item.active .link {
+  color: #2BEE34 !important;
+}
+
+.dark-mode .custom-navbar .hamburger .hamburger-inner,
+.dark-mode .custom-navbar .hamburger .hamburger-inner::before,
+.dark-mode .custom-navbar .hamburger .hamburger-inner::after {
+  background-color: #f5f5f5 !important;
+}
+
+/* Custom Toggle Switch Styles */
+.custom-navbar .hamburger {
+  order: 1;
+}
+
+.theme-switch-toggle {
+  position: relative;
+  width: 80px;
+  height: 36px;
+  border-radius: 50px;
+  border: 2px solid #695aa6;
+  background: #4ab6e8;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 0;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  outline: none;
+  box-shadow:
+    inset 0 2px 5px rgba(0, 0, 0, 0.1),
+    0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-left: auto;
+  margin-right: 0px;
+  order: 2;
+}
+
+.dark-mode .theme-switch-toggle {
+  border-color: #2BEE34 !important;
+  background: #1a1a1a !important;
+  box-shadow:
+    inset 0 2px 5px rgba(0, 0, 0, 0.4),
+    0 0 10px rgba(43, 238, 52, 0.25) !important;
+}
+
+
+/* Mobile alignment: place toggle switch to the right of hamburger menu */
+@media (max-width: 991.98px) {
+  .custom-navbar .hamburger {
+    margin-left: auto !important;
+    order: 1 !important;
+  }
+  .theme-switch-toggle {
+    margin-left: 15px !important;
+    margin-right: 0 !important;
+    order: 2 !important;
+  }
+}
+
+/* Sky Background Container */
+.theme-switch-toggle .sky-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.theme-switch-toggle .day-sky {
+  opacity: 1;
+}
+
+.theme-switch-toggle.active .day-sky {
+  opacity: 0;
+}
+
+.theme-switch-toggle .night-sky {
+  opacity: 0;
+}
+
+.theme-switch-toggle.active .night-sky {
+  opacity: 1;
+}
+
+/* Clouds (Day Sky) */
+.theme-switch-toggle .cloud {
+  position: absolute;
+  background: #ffffff;
+  border-radius: 50%;
+  bottom: -8px;
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.theme-switch-toggle .cloud-1 {
+  width: 25px;
+  height: 25px;
+  left: 15px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.theme-switch-toggle .cloud-2 {
+  width: 32px;
+  height: 32px;
+  left: 30px;
+  bottom: -10px;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.theme-switch-toggle .cloud-3 {
+  width: 20px;
+  height: 20px;
+  left: 55px;
+  bottom: -6px;
+  background: #ffffff;
+}
+
+.theme-switch-toggle.active .cloud {
+  transform: translateY(30px);
+}
+
+/* Stars (Night Sky) */
+.theme-switch-toggle .star {
+  position: absolute;
+  color: #ffffff;
+  transition:
+    transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+    opacity 0.4s ease;
+  opacity: 0;
+  transform: scale(0.3) translateY(-10px);
+  line-height: 1;
+}
+
+.theme-switch-toggle.active .star {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.theme-switch-toggle .star-1 {
+  left: 12px;
+  top: 8px;
+  font-size: 7px;
+  transition-delay: 0.05s;
+}
+.theme-switch-toggle .star-2 {
+  left: 24px;
+  top: 18px;
+  font-size: 5px;
+  transition-delay: 0.1s;
+}
+.theme-switch-toggle .star-3 {
+  left: 34px;
+  top: 10px;
+  font-size: 8px;
+  transition-delay: 0.15s;
+}
+.theme-switch-toggle .star-4 {
+  left: 45px;
+  top: 22px;
+  font-size: 4px;
+  transition-delay: 0.2s;
+}
+.theme-switch-toggle .star-5 {
+  left: 52px;
+  top: 7px;
+  font-size: 6px;
+  transition-delay: 0.25s;
+}
+
+/* Knob Container */
+.theme-switch-toggle .toggle-knob {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  z-index: 2;
+  overflow: hidden;
+}
+
+.theme-switch-toggle.active .toggle-knob {
+  transform: translateX(44px);
+}
+
+/* Sun Element (Default Light state) */
+.theme-switch-toggle .sun-element {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fffe15;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #fffe15;
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+
+.theme-switch-toggle.active .sun-element {
+  opacity: 0;
+}
+
+/* Moon Element (Active Dark state) */
+.theme-switch-toggle .moon-element {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #d1d5db;
+  border-radius: 50%;
+  box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.theme-switch-toggle.active .moon-element {
+  opacity: 1;
+}
+
+/* Moon Craters */
+.theme-switch-toggle .crater {
+  position: absolute;
+  background: #9ca3af;
+  border-radius: 50%;
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.theme-switch-toggle .crater-1 {
+  width: 7px;
+  height: 7px;
+  top: 8px;
+  left: 4px;
+}
+
+.theme-switch-toggle .crater-2 {
+  width: 5px;
+  height: 5px;
+  top: 14px;
+  left: 14px;
+}
+
+.theme-switch-toggle .crater-3 {
+  width: 4px;
+  height: 4px;
+  top: 5px;
+  left: 15px;
+}
+
+/* Dark Mode Mobile Dropdown */
+@media (max-width: 991.98px) {
+  .dark-mode .custom-navbar .nav {
+    background: #1a1a1a !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
+  }
+  .dark-mode .custom-navbar .nav .item .link {
+    color: #f5f5f5 !important;
+  }
+  .dark-mode .custom-navbar .nav .item .link:hover,
+  .dark-mode .custom-navbar .nav .item .link.active {
+    color: #2BEE34 !important;
+  }
+}
+

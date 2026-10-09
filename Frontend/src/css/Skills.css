@@ -1,0 +1,55 @@
+/* Skills Section Styles */
+.skills-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.skills-body {
+  flex: 1;
+}
+
+.skills-icon {
+  height: 45px;
+  object-fit: contain;
+}
+
+.skills-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.skills-badge {
+  font-size: 0.7rem;
+  padding: 4px 8px;
+  border-radius: 10px;
+}
+
+.skills-description {
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+/* Dark Mode Overrides for service-card and badge-primary inside service section */
+.dark-mode .service-card {
+  background-color: #1e1e1e !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: #f5f5f5 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.dark-mode .service-card:hover {
+  border-color: rgba(43, 238, 52, 0.45) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(43, 238, 52, 0.12) !important;
+}
+
+.dark-mode .service-card .title {
+  color: #f5f5f5 !important;
+}
+
+.dark-mode .badge-primary {
+  background-color: rgba(43, 238, 52, 0.12) !important;
+  color: #2BEE34 !important;
+  border: 1px solid rgba(43, 238, 52, 0.25) !important;
+}
+

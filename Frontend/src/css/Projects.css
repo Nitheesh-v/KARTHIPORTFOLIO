@@ -1,0 +1,151 @@
+/* Portfolio/Projects Styles */
+.project-card {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  border-color: #695aa6;
+  box-shadow: 0 12px 30px rgba(105, 90, 166, 0.15);
+}
+
+.project-img-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+  background-color: #f8f9fa;
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.project-card:hover .project-img {
+  transform: scale(1.05);
+}
+
+.project-card-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.tech-badge {
+  display: inline-block;
+  background-color: rgba(105, 90, 166, 0.08);
+  color: #695aa6;
+  font-size: 0.72rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-right: 6px;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.project-btn-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.project-btn {
+  flex: 1;
+  text-align: center;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.project-btn-primary {
+  background-color: #695aa6;
+  color: #fff;
+  border: 1px solid #695aa6;
+}
+
+.project-btn-primary:hover {
+  background-color: #574a8a;
+  border-color: #574a8a;
+  color: #fff;
+}
+
+.project-btn-secondary {
+  background-color: transparent;
+  color: #695aa6;
+  border: 1px solid #695aa6;
+}
+
+.project-btn-secondary:hover {
+  background-color: rgba(105, 90, 166, 0.05);
+  color: #695aa6;
+}
+
+/* Dark Mode Overrides */
+.dark-mode .project-card {
+  background-color: #1e1e1e !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: #f5f5f5 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
+}
+
+.dark-mode .project-card:hover {
+  border-color: rgba(43, 238, 52, 0.45) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(43, 238, 52, 0.12) !important;
+}
+
+.dark-mode .project-img-wrapper {
+  background-color: #181818 !important;
+}
+
+.dark-mode .project-card h5 {
+  color: #f5f5f5 !important;
+}
+
+.dark-mode .tech-badge {
+  background-color: rgba(43, 238, 52, 0.1) !important;
+  color: #2BEE34 !important;
+  border: 1px solid rgba(43, 238, 52, 0.2) !important;
+}
+
+.dark-mode .project-btn-primary {
+  background-color: #2BEE34 !important;
+  border-color: #2BEE34 !important;
+  color: #141414 !important;
+  font-weight: 600;
+}
+
+.dark-mode .project-btn-primary:hover {
+  background-color: #25d42e !important;
+  border-color: #25d42e !important;
+  color: #141414 !important;
+  box-shadow: 0 4px 15px rgba(43, 238, 52, 0.35) !important;
+}
+
+.dark-mode .project-btn-secondary {
+  background-color: transparent !important;
+  border-color: #2BEE34 !important;
+  color: #2BEE34 !important;
+}
+
+.dark-mode .project-btn-secondary:hover {
+  background-color: rgba(43, 238, 52, 0.08) !important;
+  color: #2BEE34 !important;
+  box-shadow: 0 2px 10px rgba(43, 238, 52, 0.15) !important;
+}
+

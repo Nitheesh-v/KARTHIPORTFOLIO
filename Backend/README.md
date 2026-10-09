@@ -73,6 +73,22 @@ npm run dev              # nodemon on http://localhost:5000
 
 Gmail requires 2-Step Verification to be ON before App Passwords can be created.
 
+### Verify the setup (before trusting the form)
+
+```bash
+npm run check            # .env + MongoDB read/write + SMTP login
+npm run check -- --send  # same, and delivers a REAL test email to MAIL_TO
+```
+
+Typical results:
+
+| Output | Meaning |
+|---|---|
+| `.env -> SMTP_USER is still the example placeholder` | you have not filled `.env` yet |
+| `SMTP verification failed: Invalid login` | wrong App Password, or 2-Step Verification is off |
+| `querySrv ENOTFOUND` / `ETIMEDOUT` on connect | bad `MONGO_URI`, or your IP is not whitelisted in Atlas (Network Access → add your IP or `0.0.0.0/0`) |
+| `All checks passed` | the contact form will store the message **and** email you |
+
 ---
 
 ## API

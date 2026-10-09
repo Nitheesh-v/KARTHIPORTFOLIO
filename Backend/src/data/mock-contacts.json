@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Arun Prakash",
+    "email": "arun.prakash@example.com",
+    "message": "Hi Karthick, I came across your portfolio and really liked the Eat & Meat project. We are hiring a MERN developer at our Coimbatore office. Are you open to a quick call this week?",
+    "status": "new",
+    "emailSent": true,
+    "daysAgo": 0
+  },
+  {
+    "name": "Divya Ramesh",
+    "email": "divya.ramesh@example.com",
+    "message": "Hello! I am a final year student working on a React project and got stuck with state management. Your Projects section was really helpful. Could you share any resources you used while learning?",
+    "status": "new",
+    "emailSent": true,
+    "daysAgo": 1
+  },
+  {
+    "name": "Michael Fernandez",
+    "email": "michael.fernandez@example.com",
+    "message": "We need a freelance developer to build a small inventory dashboard with Node and MySQL. Timeline is about 3 weeks. Let me know your availability and hourly rate.",
+    "status": "read",
+    "emailSent": true,
+    "daysAgo": 3
+  },
+  {
+    "name": "Sowmiya Lakshmi",
+    "email": "sowmiya.l@example.com",
+    "message": "Your portfolio loads really fast and the dark mode looks clean. Did you build the UI from scratch or start from a template? Would love to know the stack you used.",
+    "status": "replied",
+    "emailSent": true,
+    "daysAgo": 5
+  },
+  {
+    "name": "Rahul Nair",
+    "email": "rahul.nair@example.com",
+    "message": "Hi, I represent a startup building an e-commerce platform. We saw the Insane Ecommerce project in your portfolio and would like to discuss a full time Full Stack Developer role. Please share your updated resume.",
+    "status": "replied",
+    "emailSent": true,
+    "daysAgo": 8
+  },
+  {
+    "name": "Priya Venkatesan",
+    "email": "priya.venkatesan@example.com",
+    "message": "Just wanted to say the GIMS project write-up was very well explained. Keep posting more case studies, they are genuinely useful for juniors like me.",
+    "status": "read",
+    "emailSent": true,
+    "daysAgo": 12
+  },
+  {
+    "name": "David Kumar",
+    "email": "david.kumar@example.com",
+    "message": "Quick question about your validation project - did you handle the form validation purely on the client side, or is there a server side layer as well? Working on something similar right now.",
+    "status": "new",
+    "emailSent": false,
+    "daysAgo": 15
+  },
+  {
+    "name": "Anitha Selvam",
+    "email": "anitha.selvam@example.com",
+    "message": "Hello Karthickraja, we are organising a student tech meetup in Coimbatore next month and would love to have you speak about building full stack projects. Would you be interested?",
+    "status": "replied",
+    "emailSent": true,
+    "daysAgo": 21
+  },
+  {
+    "name": "Vignesh Babu",
+    "email": "vignesh.babu@example.com",
+    "message": "Found a tiny issue - the resume download link opened slowly on mobile data. Might be worth compressing the PDF. Otherwise the site is great, nice work!",
+    "status": "archived",
+    "emailSent": true,
+    "daysAgo": 30
+  },
+  {
+    "name": "Keerthana Suresh",
+    "email": "keerthana.suresh@example.com",
+    "message": "Hi, our agency needs a developer for a 2 month contract to maintain a React dashboard. Remote, flexible hours. Interested? Happy to send over the detailed scope.",
+    "status": "archived",
+    "emailSent": true,
+    "daysAgo": 45
+  }
+]

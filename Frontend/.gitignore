@@ -1,0 +1,5 @@
+node_modules/
+# dist/ is committed in this repo (deployment build output)
+.env
+.env.local
+*.log

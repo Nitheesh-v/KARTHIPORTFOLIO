@@ -35,10 +35,22 @@ async function connectDB() {
     logger.warn("MongoDB disconnected")
   );
 
-  return mongoose.connect(env.MONGO_URI, {
-    dbName: env.DB_NAME,
-    serverSelectionTimeoutMS: 10000, // fail fast if the cluster is unreachable
-  });
+  try {
+    return await mongoose.connect(env.MONGO_URI, {
+      dbName: env.DB_NAME,
+      serverSelectionTimeoutMS: 10000, // fail fast if the cluster is unreachable
+    });
+  } catch (error) {
+    // Turn the cryptic driver error into an actionable hint
+    if (/auth/i.test(error.message)) {
+      error.message +=
+        "  -> MongoDB rejected the username/password inside MONGO_URI. " +
+        "Fix: Atlas -> Database Access -> reset the DB user's password, then paste a " +
+        "fresh connection string into Backend/.env with no < > brackets left, and " +
+        "URL-encode special characters in the password (@ -> %40, # -> %23, / -> %2F).";
+    }
+    throw error;
+  }
 }
 
 /** Close the MongoDB connection (graceful shutdown). */

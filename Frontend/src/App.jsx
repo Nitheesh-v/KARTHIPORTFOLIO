@@ -8,6 +8,9 @@ import Services from "./components/Services";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Experience from "./components/Experience";
+import Education from "./components/Education";
+import Certifications from "./components/Certifications";
+import CtaBanner from "./components/CtaBanner";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ScrollTop from "./components/ScrollTop";
@@ -57,6 +60,9 @@ export default function App() {
       <Skills />
       <Projects />
       <Experience />
+      <Education />
+      <Certifications />
+      <CtaBanner />
       <Contact />
       <Footer />
       <ScrollTop />

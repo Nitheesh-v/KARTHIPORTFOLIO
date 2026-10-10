@@ -26,6 +26,15 @@ export const PROJECTS_DATA = [
     liveLink: "https://eam-five.vercel.app/",
     gitLink: "https://github.com/KARTHICK2320/EatandMeat",
   },
+  {
+    title: "Track My Customer – CRM Module",
+    image: null, // no screenshot yet -> gradient placeholder is rendered
+    description:
+      "Customer management module with a responsive Tailwind-styled UI, status tracking and automated alert triggers, integrated with a Python/Flask REST API built alongside the backend team.",
+    tech: ["React.js", "Tailwind CSS", "Flask", "REST API", "JWT"],
+    liveLink: "#",
+    gitLink: "https://github.com/KARTHICK2320",
+  },
 ];
 
 export default function Projects() {
@@ -43,11 +52,18 @@ export default function Projects() {
             >
               <div className="project-card w-100">
                 <div className="project-img-wrapper">
-                  <img
-                    src={item.image}
-                    className="project-img"
-                    alt={item.title}
-                  />
+                  {item.image ? (
+                    <img
+                      src={item.image}
+                      className="project-img"
+                      alt={item.title}
+                    />
+                  ) : (
+                    <div className="project-img-fallback">
+                      <i className="ti-briefcase"></i>
+                      <span>CRM</span>
+                    </div>
+                  )}
                 </div>
                 <div className="project-card-body">
                   <div>

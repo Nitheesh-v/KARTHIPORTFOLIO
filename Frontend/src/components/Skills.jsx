@@ -1,4 +1,4 @@
-const SKILLS_DATA = [
+export const SKILLS_DATA = [
   // Frontend
   {
     title: "React.js",

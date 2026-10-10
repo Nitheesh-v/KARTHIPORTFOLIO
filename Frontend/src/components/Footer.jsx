@@ -18,7 +18,7 @@ export default function Footer() {
             <i className="ti-linkedin"></i>
           </a>
           <a
-            href="https://github.com/"
+            href="https://github.com/KARTHICK2320"
             target="_blank"
             rel="noopener noreferrer"
             className="link mr-3"

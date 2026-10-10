@@ -1,4 +1,4 @@
-const EXPERIENCE_DATA = [
+export const EXPERIENCE_DATA = [
   {
     role: "Frontend Developer Intern",
     company: "Pargavan Cyber Solutions, Coimbatore",
@@ -54,7 +54,6 @@ export default function Experience() {
                     key={pIndex}
                     style={{
                       marginBottom: "10px",
-                      color: "#666",
                       fontSize: "0.95rem",
                     }}
                   >

@@ -60,6 +60,15 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
           <li className="item">
             <a
               className="link"
+              href="#services"
+              onClick={(e) => handleLinkClick(e, "#services")}
+            >
+              Services
+            </a>
+          </li>
+          <li className="item">
+            <a
+              className="link"
               href="#portfolio"
               onClick={(e) => handleLinkClick(e, "#portfolio")}
             >

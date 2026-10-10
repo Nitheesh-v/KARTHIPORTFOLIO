@@ -1,0 +1,327 @@
+/* ==================================================================
+   Enhancements.css
+   One shared stylesheet for the visual upgrade package:
+   section reveals, title underlines, stats strip, services cards,
+   tech ticker, hero typing caret, progress bar, back-to-top.
+   Every block has a light-mode and a .dark-mode variant.
+   ================================================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ---------- section entrance (added by App's IntersectionObserver) */
+.section {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.section.in-view {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- hero load animation + typing caret ---------- */
+.header-content .header-title {
+  animation: rise-in 0.8s ease both;
+}
+
+.header-content .header-subtitle {
+  animation: rise-in 0.8s 0.15s ease both;
+  min-height: 1.6em; /* no layout jump while typing */
+}
+
+.header-content .header-content .btn,
+.header-content .btn {
+  animation: rise-in 0.8s 0.3s ease both;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.type-caret {
+  display: inline-block;
+  width: 2px;
+  height: 1.05em;
+  margin-left: 4px;
+  vertical-align: text-bottom;
+  background: currentColor;
+  animation: caret-blink 1s steps(1) infinite;
+}
+
+@keyframes caret-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ---------- consistent section titles ---------- */
+.section-title {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 12px;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  border-radius: 3px;
+  background: #695aa6;
+}
+
+.dark-mode .section-title::after {
+  background: #2bee34;
+}
+
+.section-kicker {
+  color: #888;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.dark-mode .section-kicker {
+  color: #a0a0a0;
+}
+
+/* ---------- stats strip ---------- */
+.stats-strip {
+  background: #ffffff;
+  border-bottom: 1px solid #ececf1;
+  padding: 36px 0;
+}
+
+.dark-mode .stats-strip {
+  background: #191919;
+  border-bottom-color: #2a2a2a;
+}
+
+.stats-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 24px;
+  text-align: center;
+}
+
+.stat-value {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #695aa6;
+}
+
+.dark-mode .stat-value {
+  color: #2bee34;
+}
+
+.stat-plus {
+  font-size: 1.3rem;
+  margin-left: 2px;
+  vertical-align: top;
+}
+
+.stat-label {
+  color: #777;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.dark-mode .stat-label {
+  color: #a0a0a0;
+}
+
+/* ---------- tech ticker (marquee) ---------- */
+.tech-ticker {
+  overflow: hidden;
+  padding: 14px 0;
+  border-top: 1px solid rgba(105, 90, 166, 0.25);
+  border-bottom: 1px solid rgba(105, 90, 166, 0.25);
+  background: rgba(105, 90, 166, 0.05);
+}
+
+.dark-mode .tech-ticker {
+  border-top-color: rgba(43, 238, 52, 0.25);
+  border-bottom-color: rgba(43, 238, 52, 0.25);
+  background: rgba(43, 238, 52, 0.05);
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker-scroll 30s linear infinite;
+}
+
+.tech-ticker:hover .ticker-track {
+  animation-play-state: paused;
+}
+
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 22px;
+  white-space: nowrap;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #695aa6;
+}
+
+.dark-mode .ticker-item {
+  color: #2bee34;
+}
+
+.ticker-dot {
+  font-size: 0.7rem;
+  opacity: 0.6;
+}
+
+@keyframes ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ---------- services ("What I Do") ---------- */
+.service-item {
+  border-radius: 8px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.dark-mode .service-item:hover {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
+}
+
+.service-icon-wrap {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  background: rgba(105, 90, 166, 0.12);
+  color: #695aa6;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.service-item:hover .service-icon-wrap {
+  background: #695aa6;
+  color: #ffffff;
+}
+
+.dark-mode .service-icon-wrap {
+  background: rgba(43, 238, 52, 0.12);
+  color: #2bee34;
+}
+
+.dark-mode .service-item:hover .service-icon-wrap {
+  background: #2bee34;
+  color: #141414;
+}
+
+.service-title {
+  font-weight: 600;
+}
+
+.dark-mode .service-title {
+  color: #f5f5f5;
+}
+
+/* ---------- dark-mode readability fixes for existing cards ---------- */
+.project-card h5 {
+  color: #222;
+}
+
+.dark-mode .project-card h5 {
+  color: #f5f5f5 !important;
+}
+
+.experience-card li {
+  color: #666;
+}
+
+.dark-mode .experience-card li {
+  color: #a0a0a0 !important;
+}
+
+/* ---------- scroll progress bar + back-to-top ---------- */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: #695aa6;
+  z-index: 2000;
+  transition: width 0.1s linear;
+}
+
+.dark-mode .scroll-progress {
+  background: #2bee34;
+}
+
+.scroll-top-btn {
+  position: fixed;
+  right: 26px;
+  bottom: 26px;
+  width: 46px;
+  height: 46px;
+  border: none;
+  border-radius: 50%;
+  background: #695aa6;
+  color: #ffffff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0.3s;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  z-index: 1500;
+}
+
+.scroll-top-btn.show {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.dark-mode .scroll-top-btn {
+  background: #2bee34;
+  color: #141414;
+}

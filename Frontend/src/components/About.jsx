@@ -54,7 +54,7 @@ export default function About() {
 
                   <div className="mt-4 d-flex flex-wrap align-items-center justify-content-between">
                     <a
-                      href="dist/resume/Karthickraja_K_Full_Stack_Developer_Resume.pdf"
+                      href="/resume/Karthickraja_K_Full_Stack_Developer_Resume.pdf"
                       download
                       className="btn btn-primary btn-rounded"
                       style={{ textDecoration: "none", padding: "10px 25px" }}

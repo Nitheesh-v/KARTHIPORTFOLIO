@@ -1,4 +1,4 @@
-const PROJECTS_DATA = [
+export const PROJECTS_DATA = [
   {
     title: "GIMS – Grocery Inventory Management System",
     image: "/assets/imgs/gims_preview.png",
@@ -56,7 +56,6 @@ export default function Projects() {
                       style={{
                         fontWeight: "600",
                         fontSize: "1.15rem",
-                        color: "#222",
                       }}
                     >
                       {item.title}

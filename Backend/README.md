@@ -8,45 +8,47 @@ Flow: **1. data from frontend → 2. DB logic (MongoDB) → 3. data back to fron
 ## Folder structure
 
 ```
-Backend/                              # classic MERN backend, plain .js files
-├── server.js                 # entry point: env check → DB → SMTP → listen → graceful shutdown
-├── app.js                    # express app: security, CORS, parsers, routes, error handler
-├── .env                      # YOUR secrets (git-ignored)
-├── .env.example              # template, copy it to .env
-├── config/
-│   ├── env.js                # loads .env once, exports typed config
-│   ├── database.js           # MongoDB (mongoose) connect / disconnect
-│   └── mailer.js             # Nodemailer SMTP transporter (cached + verify)
-├── models/
-│   └── contact.model.js      # STEP 2: Mongoose schema for "contacts"
-├── validators/
-│   └── contact.validator.js  # STEP 1: sanitise + validate the payload
-├── middleware/
-│   ├── validateContact.middleware.js  # runs the validator → 422 on bad input
-│   ├── rateLimiter.middleware.js      # 5 submissions / 15 min / IP
-│   ├── adminAuth.middleware.js        # x-admin-key guard for read routes
-│   ├── notFound.middleware.js         # unmatched route → 404
-│   └── error.middleware.js            # single place errors become JSON
-├── controllers/
-│   └── contact.controller.js # glue: validated data → services → response
-├── services/
-│   ├── contact.service.js    # STEP 2: all MongoDB queries live here
-│   └── mail.service.js       # owner notification + visitor auto-reply
-├── routes/
-│   ├── index.js              # mounts every router under /api
-│   ├── contact.routes.js     # /api/contact
-│   └── health.routes.js      # /api/health
-├── data/
-│   └── mock-contacts.json    # seed fixtures (npm run seed)
+Backend/                                # plain .js Express API - same style as the reference project
+├── server.js                   # entry: env check -> DB -> SMTP -> listen -> graceful shutdown
+├── .env                        # YOUR secrets (git-ignored)
+├── .env.example                # template, copy it to .env
 ├── scripts/
-│   ├── checkSetup.js         # npm run check  - env + DB + SMTP diagnostic
-│   └── seed.js               # npm run seed   - insert mock contacts
-└── utils/
-    ├── apiResponse.js        # one JSON envelope for every response
-    ├── ApiError.js           # error with an HTTP status code
-    ├── asyncHandler.js       # async controllers without try/catch
-    ├── emailTemplates.js     # HTML / text mail bodies
-    └── logger.js             # timestamped console logger
+│   ├── checkSetup.js           # npm run check  - env + DB + SMTP diagnostic
+│   └── seed.js                 # npm run seed   - insert mock contacts
+└── src/
+    ├── app.js                  # express app: security, CORS, parsers, routes, error handler
+    ├── config/
+    │   ├── env.js              # loads .env once, exports typed config
+    │   ├── database.js         # MongoDB (mongoose) connect / disconnect
+    │   └── mailer.js           # Nodemailer SMTP transporter (cached + verify)
+    ├── controllers/
+    │   ├── contactController.js    # glue: validated data -> services -> response
+    │   └── healthController.js     # GET /api/health handler
+    ├── middlewares/
+    │   ├── validateContactMiddleware.js  # runs the validator -> 422 on bad input
+    │   ├── rateLimiterMiddleware.js      # 5 submissions / 15 min / IP
+    │   ├── adminAuthMiddleware.js        # x-admin-key guard for read routes
+    │   ├── notFoundMiddleware.js         # unmatched route -> 404
+    │   └── errorMiddleware.js            # single place errors become JSON
+    ├── models/
+    │   └── contactModel.js     # STEP 2: Mongoose schema for "contacts"
+    ├── routes/
+    │   ├── index.js            # mounts every router under /api
+    │   ├── contactRoutes.js    # /api/contact
+    │   └── healthRoutes.js     # /api/health
+    ├── services/
+    │   ├── contactService.js   # STEP 2: all MongoDB queries live here
+    │   └── mailService.js      # owner notification + visitor auto-reply
+    ├── validators/
+    │   └── contactValidator.js # STEP 1: sanitise + validate the payload
+    ├── data/
+    │   └── mock-contacts.json  # seed fixtures (npm run seed)
+    └── utils/
+        ├── apiResponse.js      # one JSON envelope for every response
+        ├── apiError.js         # error with an HTTP status code
+        ├── asyncHandler.js     # async controllers without try/catch
+        ├── emailTemplates.js   # HTML / text mail bodies
+        └── logger.js           # timestamped console logger
 ```
 
 **Layer rule:** `route → middleware → controller → service → model`.
@@ -97,7 +99,7 @@ Typical results:
 
 ## Mock data (seed the database)
 
-Ten realistic contact messages live in `data/mock-contacts.json`
+Ten realistic contact messages live in `src/data/mock-contacts.json`
 (job offers, student questions, feedback, spread over the last 45 days with
 mixed `status` and `emailSent` values).
 

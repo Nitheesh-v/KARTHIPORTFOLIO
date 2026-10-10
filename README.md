@@ -17,11 +17,11 @@ KARTHIPORTFOLIO/
         ▼
  services/contact.service.js  ->  httpClient.js  ->  Vite proxy  ->  Express
         │
-        │  validateContact middleware  (sanitise + validate, 422 on bad input)
+        │  validateContactMiddleware  (sanitise + validate, 422 on bad input)
         ▼
- contact.controller.js
-        ├── 2. db logic  : contact.service.js  -> MongoDB "contacts" collection
-        └──    mail      : mail.service.js     -> your inbox + visitor auto-reply
+ src/controllers/contactController.js
+        ├── 2. db logic  : src/services/contactService.js  -> MongoDB "contacts"
+        └──    mail      : src/services/mailService.js     -> your inbox + auto-reply
         │
         ▼  3. data back to frontend
  { success, message, data, errors }  ->  success / error alert in the form

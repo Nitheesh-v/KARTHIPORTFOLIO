@@ -1,5 +1,5 @@
 /**
- * validateContact.middleware.js
+ * validateContactMiddleware.js
  * ------------------------------------------------------------------
  * Runs the contact validator on req.body.
  *  - invalid -> 422 response with a field -> message map
@@ -8,7 +8,7 @@
  * ------------------------------------------------------------------
  */
 
-const { validateContactPayload } = require("../validators/contact.validator");
+const { validateContactPayload } = require("../validators/contactValidator");
 const { sendError } = require("../utils/apiResponse");
 
 function validateContact(req, res, next) {

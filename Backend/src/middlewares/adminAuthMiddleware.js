@@ -1,5 +1,5 @@
 /**
- * adminAuth.middleware.js
+ * adminAuthMiddleware.js
  * ------------------------------------------------------------------
  * Very small guard for the read endpoints (listing stored messages).
  * The caller must send the header:   x-admin-key: <ADMIN_API_KEY>
@@ -8,7 +8,7 @@
  */
 
 const env = require("../config/env");
-const ApiError = require("../utils/ApiError");
+const ApiError = require("../utils/apiError");
 
 function adminAuth(req, res, next) {
   // No key configured -> deny access instead of exposing the data

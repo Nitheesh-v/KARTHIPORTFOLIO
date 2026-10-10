@@ -14,8 +14,8 @@ const morgan = require("morgan");
 
 const env = require("./config/env");
 const routes = require("./routes");
-const notFound = require("./middleware/notFound.middleware");
-const errorHandler = require("./middleware/error.middleware");
+const notFound = require("./middlewares/notFoundMiddleware");
+const errorHandler = require("./middlewares/errorMiddleware");
 
 const app = express();
 

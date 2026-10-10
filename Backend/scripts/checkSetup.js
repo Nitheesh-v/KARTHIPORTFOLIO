@@ -15,11 +15,11 @@
 
 const mongoose = require("mongoose");
 
-const env = require("../config/env");
-const logger = require("../utils/logger");
-const { connectDB, disconnectDB } = require("../config/database");
-const { verifyMailer } = require("../config/mailer");
-const mailService = require("../services/mail.service");
+const env = require("../src/config/env");
+const logger = require("../src/utils/logger");
+const { connectDB, disconnectDB } = require("../src/config/database");
+const { verifyMailer } = require("../src/config/mailer");
+const mailService = require("../src/services/mailService");
 
 // `npm run check -- --send` also delivers a real email to MAIL_TO
 const SHOULD_SEND = process.argv.includes("--send");

@@ -1,5 +1,5 @@
 /**
- * contact.model.js
+ * contactModel.js
  * ------------------------------------------------------------------
  * STEP 2 (db logic) - the MongoDB schema for one contact-form entry.
  * Collection: "contacts"

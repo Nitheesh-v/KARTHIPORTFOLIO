@@ -1,5 +1,5 @@
 /**
- * contact.routes.js
+ * contactRoutes.js
  * ------------------------------------------------------------------
  * URL -> middleware chain -> controller mapping for /api/contact
  * ------------------------------------------------------------------
@@ -7,10 +7,10 @@
 
 const express = require("express");
 
-const controller = require("../controllers/contact.controller");
-const validateContact = require("../middleware/validateContact.middleware");
-const adminAuth = require("../middleware/adminAuth.middleware");
-const { contactLimiter } = require("../middleware/rateLimiter.middleware");
+const controller = require("../controllers/contactController");
+const validateContact = require("../middlewares/validateContactMiddleware");
+const adminAuth = require("../middlewares/adminAuthMiddleware");
+const { contactLimiter } = require("../middlewares/rateLimiterMiddleware");
 
 const router = express.Router();
 

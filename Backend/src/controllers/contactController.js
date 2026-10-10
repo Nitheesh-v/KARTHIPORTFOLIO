@@ -1,5 +1,5 @@
 /**
- * contact.controller.js
+ * contactController.js
  * ------------------------------------------------------------------
  * The glue layer. For every request it:
  *   STEP 1 - takes the validated data coming FROM THE FRONTEND
@@ -10,11 +10,11 @@
  */
 
 const asyncHandler = require("../utils/asyncHandler");
-const ApiError = require("../utils/ApiError");
+const ApiError = require("../utils/apiError");
 const logger = require("../utils/logger");
 const { sendSuccess } = require("../utils/apiResponse");
-const contactService = require("../services/contact.service");
-const mailService = require("../services/mail.service");
+const contactService = require("../services/contactService");
+const mailService = require("../services/mailService");
 
 /**
  * @route   POST /api/contact

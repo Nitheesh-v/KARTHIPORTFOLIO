@@ -1,5 +1,5 @@
 /**
- * error.middleware.js
+ * errorMiddleware.js
  * ------------------------------------------------------------------
  * THE single place where errors become HTTP responses.
  * Must be registered LAST in app.js (Express identifies it by its

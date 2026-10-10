@@ -8,8 +8,8 @@
 
 const express = require("express");
 
-const contactRoutes = require("./contact.routes");
-const healthRoutes = require("./health.routes");
+const contactRoutes = require("./contactRoutes");
+const healthRoutes = require("./healthRoutes");
 
 const router = express.Router();
 

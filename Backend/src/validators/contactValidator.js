@@ -1,5 +1,5 @@
 /**
- * contact.validator.js
+ * contactValidator.js
  * ------------------------------------------------------------------
  * STEP 1 (data from frontend) - sanitise + validate the request body
  * BEFORE it reaches the controller / database.

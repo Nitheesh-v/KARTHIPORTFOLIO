@@ -1,12 +1,12 @@
 /**
- * contact.service.js
+ * contactService.js
  * ------------------------------------------------------------------
  * STEP 2 (db logic) - ALL database access for contacts lives here.
  * Controllers never call Mongoose directly; they call this service.
  * ------------------------------------------------------------------
  */
 
-const Contact = require("../models/contact.model");
+const Contact = require("../models/contactModel");
 
 /**
  * Insert a new contact message.

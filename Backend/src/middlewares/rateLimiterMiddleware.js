@@ -1,5 +1,5 @@
 /**
- * rateLimiter.middleware.js
+ * rateLimiterMiddleware.js
  * ------------------------------------------------------------------
  * Basic spam / abuse protection for the public contact endpoint:
  * max 5 submissions per IP per 15 minutes.

@@ -1,5 +1,5 @@
 /**
- * mail.service.js
+ * mailService.js
  * ------------------------------------------------------------------
  * Sends the emails triggered by the contact form:
  *   1. notification -> YOUR inbox (MAIL_TO)

@@ -79,6 +79,27 @@ npm run dev              # nodemon on http://localhost:5000
 
 Gmail requires 2-Step Verification to be ON before App Passwords can be created.
 
+### Option: MongoDB on localhost (no Atlas, no auth errors)
+
+```env
+MONGO_URI=mongodb://127.0.0.1:27017
+DB_NAME=portfolio
+```
+
+A local MongoDB needs **no username/password**, so `bad auth` is impossible.
+Pick one way to run it on your machine:
+
+1. **MongoDB Community Server (Windows MSI)** - <https://www.mongodb.com/try/download/community>
+   Install with the default options (it registers a Windows service that starts
+   automatically and listens on port 27017). Test it by opening `mongosh`.
+2. **Docker Desktop** - `docker run -d --name portfolio-mongo -p 27017:27017 mongo:7`
+
+Then `Ctrl+C` and `npm run dev` again -> `MongoDB connected -> db: portfolio`.
+`npm run seed` and `npm run check` now run against your local DB too.
+
+Local Mongo is perfect for development. When you deploy the site publicly,
+just change `MONGO_URI` back to an Atlas URI - no code changes needed.
+
 ### Verify the setup (before trusting the form)
 
 ```bash

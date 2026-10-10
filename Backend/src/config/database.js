@@ -49,6 +49,12 @@ async function connectDB() {
         "fresh connection string into Backend/.env with no < > brackets left, and " +
         "URL-encode special characters in the password (@ -> %40, # -> %23, / -> %2F).";
     }
+    if (/ECONNREFUSED|ENOTFOUND|ETIMEDOUT|EAI_AGAIN/i.test(error.message)) {
+      error.message +=
+        "  -> nothing is listening at that MONGO_URI. " +
+        "Localhost: install MongoDB and start the service (admin PowerShell: net start MongoDB). " +
+        "Atlas: double-check the URI and the Network Access IP whitelist.";
+    }
     throw error;
   }
 }

@@ -10,11 +10,11 @@
  * ------------------------------------------------------------------
  */
 
-const app = require("./src/app");
-const env = require("./src/config/env");
-const logger = require("./src/utils/logger");
-const { connectDB, disconnectDB } = require("./src/config/database");
-const { verifyMailer } = require("./src/config/mailer");
+const app = require("./app");
+const env = require("./config/env");
+const logger = require("./utils/logger");
+const { connectDB, disconnectDB } = require("./config/database");
+const { verifyMailer } = require("./config/mailer");
 
 let server;
 

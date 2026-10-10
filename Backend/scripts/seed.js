@@ -15,10 +15,10 @@
  * ------------------------------------------------------------------
  */
 
-const mockContacts = require("../src/data/mock-contacts.json");
-const Contact = require("../src/models/contact.model");
-const logger = require("../src/utils/logger");
-const { connectDB, disconnectDB } = require("../src/config/database");
+const mockContacts = require("../data/mock-contacts.json");
+const Contact = require("../models/contact.model");
+const logger = require("../utils/logger");
+const { connectDB, disconnectDB } = require("../config/database");
 
 const FRESH = process.argv.includes("--fresh");
 const CLEAR_ONLY = process.argv.includes("--clear");

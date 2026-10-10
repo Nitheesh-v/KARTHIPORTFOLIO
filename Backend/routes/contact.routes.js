@@ -8,9 +8,9 @@
 const express = require("express");
 
 const controller = require("../controllers/contact.controller");
-const validateContact = require("../middlewares/validateContact.middleware");
-const adminAuth = require("../middlewares/adminAuth.middleware");
-const { contactLimiter } = require("../middlewares/rateLimiter.middleware");
+const validateContact = require("../middleware/validateContact.middleware");
+const adminAuth = require("../middleware/adminAuth.middleware");
+const { contactLimiter } = require("../middleware/rateLimiter.middleware");
 
 const router = express.Router();
 
